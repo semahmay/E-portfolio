@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --cream:      #F5EBDD;
+  --paper:      #FFF9F0;
+  --ink:        #242424;
+  --red:        #E65335;
+  --blue:       #3159E8;
+  --yellow:     #E8F16A;
+  --ink-muted:  #6B6457;
+  --ink-faint:  #B8AFA3;
+  --border:     #E2D8CC;
+}
+
+@theme inline {
+  --color-cream:      var(--cream);
+  --color-paper:      var(--paper);
+  --color-ink:        var(--ink);
+  --color-red:        var(--red);
+  --color-blue:       var(--blue);
+  --color-yellow:     var(--yellow);
+  --color-ink-muted:  var(--ink-muted);
+  --color-ink-faint:  var(--ink-faint);
+  --color-border:     var(--border);
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono, 'IBM Plex Mono', 'Courier New', monospace);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-syne, 'Syne', system-ui, sans-serif);
+  font-weight: 800;
+}
+
+.font-sans-light {
+  font-family: var(--font-syne, 'Syne', system-ui, sans-serif);
+  font-weight: 400;
+}
+
+.font-mono {
+  font-family: var(--font-mono, 'IBM Plex Mono', 'Courier New', monospace);
+}
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection {
+  background-color: var(--red);
+  color: var(--paper);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 2px;
+}
+
+/* ─── Reveal animations ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Marquee ───────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Diagonal ticker ──────────────────────────────────────── */
+.ticker-bar {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ─── Project hover lift ────────────────────────────────────── */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* ─── Artwork items ─────────────────────────────────────────── */
+.artwork-item {
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+.artwork-item:hover {
+  border-color: var(--ink);
+}
+
+/* Keep figcaption stable */
+.artwork-item figcaption {
+  background: var(--paper);
+}
+
+/* ─── Nav underline ─────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ─── Tag chip ──────────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  line-height: 1.6;
+}
+
+/* ─── Section label ─────────────────────────────────────────── */
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ─── Horizontal rule ───────────────────────────────────────── */
+.ruled {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Red dot available ─────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+/* ─── Cursor blink ──────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1.1s step-end infinite;
+}
