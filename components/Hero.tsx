@@ -129,7 +129,7 @@ export default function Hero() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/maysemah"
+            href="https://github.com/semahmay"
             target="_blank"
             rel="noopener noreferrer"
             className="section-label hover:text-[var(--ink)] transition-colors"

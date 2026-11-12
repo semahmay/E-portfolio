@@ -31,7 +31,7 @@ export const featuredProjects: Project[] = [
     name: "SKUU Engineering Exercise",
     tagline: "Inventory intelligence for fashion retail",
     description:
-      "Collects product inventory from e-commerce storefronts via scraping and Shopify APIs, extracts size-level stock, normalises SKUs, and matches the same product across 13 shops. Detects back-in-stock opportunities. 62,000+ SKUs ingested, 363 backend tests passing. Includes a Next.js dashboard and a demo snapshot so the frontend runs without scraping.",
+      "Collects product inventory from e-commerce storefronts via scraping and Shopify APIs, extracts size-level stock, normalises SKUs, and matches the same product across multiple shops. Includes a Next.js dashboard and a demo snapshot so the frontend can be explored without scraping.",
     stack: ["Python", "FastAPI", "Playwright", "MongoDB", "Next.js", "TypeScript"],
     category: "Data / Backend",
     accent: "#3159E8",
@@ -46,7 +46,7 @@ export const featuredProjects: Project[] = [
     name: "ShopBot",
     tagline: "Product search and price comparison",
     description:
-      "Mobile and backend platform for product discovery in the Tunisian market. Scrapes listings from multiple retailers, normalises and deduplicates products, and presents price comparisons. Built with Flutter for mobile, NestJS for the backend, and MongoDB for storage. Main challenges: entity matching across inconsistent data and scraper maintenance.",
+      "Private mobile and backend project exploring product discovery and price comparison in the Tunisian market. Technical details are intentionally limited until the project has public documentation.",
     stack: ["Flutter", "NestJS", "MongoDB", "Web Scraping"],
     category: "Full-Stack / Mobile",
     accent: "#E65335",
@@ -57,7 +57,7 @@ export const featuredProjects: Project[] = [
     name: "ByteOS",
     tagline: "Local personal AI assistant",
     description:
-      "A personal AI assistant that runs entirely on your machine. Persistent memory across sessions, local inference, and desktop interaction. Built to explore what a private, offline-capable AI layer looks like without sending data to a cloud API.",
+      "Private AI systems experiment exploring local inference, persistent memory, and desktop interaction. Technical details are intentionally limited until the project has public documentation.",
     stack: ["Python", "Local LLM", "Persistent Memory"],
     category: "AI / Systems",
     accent: "#3159E8",

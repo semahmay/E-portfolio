@@ -2,16 +2,6 @@ import { featuredProjects, moreProjects } from "../lib/projects";
 import RevealWrapper from "./RevealWrapper";
 
 // ── Accent dot ───────────────────────────────────────────────
-function AccentDot({ color }: { color: string }) {
-  return (
-    <span
-      className="inline-block w-2 h-2 rounded-full shrink-0"
-      style={{ background: color }}
-      aria-hidden="true"
-    />
-  );
-}
-
 // ── Featured card (full-width horizontal) ───────────────────
 function FeaturedCard({
   project,

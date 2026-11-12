@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# May Semah - Portfolio
 
-## Getting Started
+Personal portfolio for May Semah, a software engineering student at ESPRIT, Tunisia, interested in AI systems, backend engineering, mobile applications, and automation.
 
-First, run the development server:
+The site presents selected projects, ongoing experiments, and Blender artwork. Project descriptions are intentionally limited to work that is publicly verifiable or clearly labelled as private or experimental.
+
+## Stack
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS v4
+- Static assets in `public/assets`
+
+## Local development
+
+Requirements: Node.js 22 or newer and npm.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-## Learn More
+The repository also includes GitHub Actions CI for pull requests and pushes to `main`.
 
-To learn more about Next.js, take a look at the following resources:
+## Public project links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [MediDesk](https://github.com/semahmay/medidesk)
+- [SKUU Engineering Exercise](https://github.com/semahmay/skuu-engineering-exercise)
+- [Gamer App 2](https://github.com/semahmay/APPGAMER2)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This repository is a presentation site, not a backend application.
+- No API keys or runtime credentials are required.
+- Fonts use local system fallbacks so production builds do not depend on downloading Google Fonts.
+- The site does not claim deployment, performance, or production readiness for projects unless those claims are documented in the linked repository.

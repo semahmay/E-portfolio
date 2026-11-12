@@ -77,8 +77,8 @@ export default function Contact() {
               />
               <ContactRow
                 label="GitHub"
-                value="github.com/maysemah"
-                href="https://github.com/maysemah"
+                value="github.com/semahmay"
+                href="https://github.com/semahmay"
               />
               <ContactRow
                 label="Phone"
